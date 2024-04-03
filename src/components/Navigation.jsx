@@ -20,6 +20,18 @@ const Navigation = () => {
             <Text>Manage Workers</Text>
           </Box>
         </NavLink>
+        <NavLink to="/manage-orders">
+          <Box>
+            <FaCog mr={2} />
+            <Text>Manage Orders</Text>
+          </Box>
+        </NavLink>
+        <NavLink to="/manage-orders">
+          <Box>
+            <FaCog mr={2} />
+            <Text>Manage Orders</Text>
+          </Box>
+        </NavLink>
       </VStack>
     </Box>
   );
