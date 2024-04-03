@@ -1,13 +1,16 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import ManageOrders from "./ManageOrders";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Index from "./pages/Index";
+import ManageWorkers from "./pages/ManageWorkers";
 
-const App = () => {
+function App() {
   return (
-    <Routes>
-      <Route path="/manage-orders" element={<ManageOrders />} />
-    </Routes>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/manage-workers" element={<ManageWorkers />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
