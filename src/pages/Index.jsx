@@ -1,25 +1,37 @@
 import React from "react";
-import { Box, Flex, Heading, Text, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, Stack, Divider, Image, VStack, Icon } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, Stack, Divider, Image, VStack, Icon, Link, useColorModeValue } from "@chakra-ui/react";
 import { FaUsers, FaCog, FaChartLine, FaDollarSign } from "react-icons/fa";
+import { Link as RouterLink } from "react-router-dom";
+
+const Navigation = () => {
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  return (
+    <Box bg="gray.100" w="250px" p={4}>
+      <VStack align="stretch" spacing={6}>
+        <Heading size="md">Dashboard</Heading>
+        <Divider />
+        <Link as={RouterLink} to="/" style={{ textDecoration: "none" }}>
+          <Text color={linkColor}>Dashboard</Text>
+        </Link>
+        <Link as={RouterLink} to="/manage-workers" style={{ textDecoration: "none" }}>
+          <Box>
+            <Icon as={FaUsers} mr={2} />
+            <Text color={linkColor}>Manage Workers</Text>
+          </Box>
+        </Link>
+        <Box>
+          <Icon as={FaCog} mr={2} />
+          <Text color={linkColor}>Manage Services</Text>
+        </Box>
+      </VStack>
+    </Box>
+  );
+};
 
 const Index = () => {
   return (
     <Flex>
-      {/* Side Panel */}
-      <Box bg="gray.100" w="250px" p={4}>
-        <VStack align="stretch" spacing={6}>
-          <Heading size="md">Dashboard</Heading>
-          <Divider />
-          <Box>
-            <Icon as={FaUsers} mr={2} />
-            <Text>Manage Workers</Text>
-          </Box>
-          <Box>
-            <Icon as={FaCog} mr={2} />
-            <Text>Manage Services</Text>
-          </Box>
-        </VStack>
-      </Box>
+      <Navigation />
 
       {/* Main Content */}
       <Box flex={1} p={8}>
