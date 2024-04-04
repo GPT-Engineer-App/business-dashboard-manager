@@ -1,6 +1,6 @@
 import { Box, VStack, Divider, Heading, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import { FaUsers, FaCog } from "react-icons/fa";
+import { FaUsers, FaCog, FaClipboardList } from "react-icons/fa";
 
 const Navigation = () => {
   return (
@@ -18,6 +18,12 @@ const Navigation = () => {
           <Box>
             <FaCog mr={2} />
             <Text>Manage Workers</Text>
+          </Box>
+        </NavLink>
+        <NavLink to="/manage-orders">
+          <Box>
+            <FaClipboardList mr={2} />
+            <Text>Manage Orders</Text>
           </Box>
         </NavLink>
       </VStack>
