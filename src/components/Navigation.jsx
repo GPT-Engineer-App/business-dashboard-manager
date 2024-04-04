@@ -26,6 +26,12 @@ const Navigation = () => {
             <Text>Manage Orders</Text>
           </Box>
         </NavLink>
+        <NavLink to="/manage-orders">
+          <Box>
+            <FaClipboardList mr={2} />
+            <Text>Manage Orders</Text>
+          </Box>
+        </NavLink>
       </VStack>
     </Box>
   );
